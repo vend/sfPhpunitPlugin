@@ -64,9 +64,10 @@ EOF;
 
     $this->arguments = $arguments;
     $this->options = $options;
-    
-    $this->executeInitTask();
-    
+
+    // Don't do an init every test run
+    //$this->executeInitTask();
+
     $suite = new sfBasePhpunitTestSuite();
     $this->handlePluginsTests($suite);
     $this->handleProjectTests($suite);
